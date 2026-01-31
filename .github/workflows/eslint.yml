@@ -24,11 +24,11 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: Install ESLint globally
+        run: npm install -g eslint
+
+      - name: Install project dependencies
         run: npm install
 
-      - name: Fix permissions
-        run: chmod +x node_modules/.bin/*
-
       - name: Run ESLint
-        run: ./node_modules/.bin/eslint .
+        run: eslint .
