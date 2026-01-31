@@ -11,10 +11,6 @@ jobs:
     name: Run ESLint
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./node-server
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -23,12 +19,17 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: node-server/package-lock.json
 
-      - name: Install ESLint globally
-        run: npm install -g eslint
-
-      - name: Install project dependencies
+      - name: Install dependencies
+        working-directory: node-server
         run: npm install
 
+      - name: List installed packages
+        working-directory: node-server
+        run: ls -la node_modules/.bin/
+
       - name: Run ESLint
-        run: eslint .
+        working-directory: node-server
+        run: node node_modules/eslint/bin/eslint.js .
