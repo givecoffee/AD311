@@ -8,8 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint": "npx eslint .",
+    "lint:fix": "npx eslint . --fix"
   },
   "keywords": [
     "nodejs",
