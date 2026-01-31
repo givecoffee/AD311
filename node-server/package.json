@@ -1,0 +1,15 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "Simple Node.js web server using ES6 modules",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["nodejs", "server", "es6", "http"],
+  "author": "",
+  "license": "ISC"
+}

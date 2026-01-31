@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                NodeServer
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Dashboard</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Get in Touch</h1>
+        <p>Questions about the routing architecture?</p>
+    </header>
+
+    <main class="content-section">
+        <div class="contact-wrapper">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p style="margin-bottom: 2rem; color: var(--text-secondary);">
+                    Fill out the form to simulate a POST request to our server. We'll log the body data to the console.
+                </p>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <strong>Server Location</strong><br>
+                        Localhost:3000
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div>
+                        <strong>Email Support</strong><br>
+                        admin@nodeserver.dev
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">🐛</div>
+                    <div>
+                        <strong>Report Issues</strong><br>
+                        GitHub Issues
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" action="/contact" method="POST">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="John Doe" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="john@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" class="form-input" rows="4" placeholder="How does the routing work?" required></textarea>
+                </div>
+                
+                <button type="submit" class="btn-submit">Send Message →</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2026 Built with Node.js</p>
+        </div>
+    </footer>
+    <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }</script>
+</body>
+</html>

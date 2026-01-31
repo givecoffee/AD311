@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | NodeServer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                NodeServer
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">Dashboard</a></li>
+                <li><a href="/about" class="active">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>About The Project</h1>
+        <p>Understanding the philosophy behind pure Node.js architecture</p>
+    </header>
+
+    <main class="content-section">
+        <div class="about-grid">
+            <div class="about-content">
+                <h2 style="color: var(--primary-color); margin-bottom: 1rem;">The Goal</h2>
+                <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+                <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                </p>
+                <div class="kpi-grid" style="grid-template-columns: 1fr; margin-top: 2rem;">
+                </div>
+            </div>
+            
+            <div class="about-image">
+                💡
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2026 Built with Node.js</p>
+        </div>
+    </footer>
+    <script>function toggleMenu() { document.getElementById('navLinks').classList.toggle('active'); }</script>
+</body>
+</html>

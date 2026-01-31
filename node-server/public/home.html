@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | NodeServer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <span class="logo-icon">⚡</span>
+                NodeServer
+            </a>
+            <button class="mobile-menu-btn" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/" class="active">Dashboard</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Dashboard Header -->
+    <header class="page-header">
+        <h1>Server Monitor</h1>
+        <p>Real-time routing visualization and server metrics</p>
+    </header>
+
+    <main class="dashboard-container">
+        <!-- KPI Cards -->
+        <div class="kpi-grid">
+            <div class="kpi-card">
+                <div class="kpi-icon">📡</div>
+                <div class="kpi-content">
+                    <h3>Active Routes</h3>
+                    <p>4</p>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">⏱️</div>
+                <div class="kpi-content">
+                    <h3>Uptime</h3>
+                    <p>99.9%</p>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">⚡</div>
+                <div class="kpi-content">
+                    <h3>Avg Latency</h3>
+                    <p>12ms</p>
+                </div>
+            </div>
+            <div class="kpi-card">
+                <div class="kpi-icon">💾</div>
+                <div class="kpi-content">
+                    <h3>Memory Usage</h3>
+                    <p>24 MB</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Routing Table -->
+        <section class="dashboard-panel">
+            <div class="panel-header">
+                <h2>Routing Configuration</h2>
+                <span class="status-badge status-active">System Online</span>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="route-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Endpoint Path</th>
+                            <th>Handler Type</th>
+                            <th>Status Code</th>
+                            <th>Latency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="method-badge method-get">GET</span></td>
+                            <td><code>/</code></td>
+                            <td>Static File (HTML)</td>
+                            <td>200 OK</td>
+                            <td>5ms</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method-badge method-get">GET</span></td>
+                            <td><code>/about</code></td>
+                            <td>Static File (HTML)</td>
+                            <td>200 OK</td>
+                            <td>8ms</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method-badge method-get">GET</span></td>
+                            <td><code>/contact</code></td>
+                            <td>Static File (HTML)</td>
+                            <td>200 OK</td>
+                            <td>7ms</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method-badge method-post">POST</span></td>
+                            <td><code>/api/contact</code></td>
+                            <td>JSON Response</td>
+                            <td>201 Created</td>
+                            <td>45ms</td>
+                        </tr>
+                        <tr>
+                            <td><span class="method-badge method-get">GET</span></td>
+                            <td><code>/unknown/*</code></td>
+                            <td>Error Handler</td>
+                            <td>404 Not Found</td>
+                            <td>2ms</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="footer-text">© 2026 Built with Node.js</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
