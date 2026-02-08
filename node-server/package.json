@@ -7,9 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "dev": "node --watch server.js",
-    "lint": "npx eslint .",
-    "lint:fix": "npx eslint . --fix"
+    "dev": "node --watch server.js"
   },
   "keywords": [
     "nodejs",
@@ -22,10 +20,6 @@
   "devDependencies": {
     "@eslint/js": "^9.39.2",
     "eslint": "^9.39.2",
-<<<<<<< HEAD
     "globals": "^15.15.0"
-=======
-    "globals": "^17.2.0"
->>>>>>> 06162fb3f2b1f684b2ecea8891768b4da898137d
   }
 }
