@@ -12,8 +12,9 @@ npm test
 
 ### What This Project Demonstrates:
 
-• Dependencies and devDependencies
-• Scripts (start, test)
-• Versioning and engines field
-• Use of Express and Jest
-• Purpose of package-lock.json
+- Dependencies and devDependencies
+- Scripts (start, test)
+- Versioning and engines field
+- Use of Express and Jest
+- Purpose of package-lock.json
+
