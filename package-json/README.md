@@ -1,4 +1,4 @@
-This project demonstrates how the package.json file works in a Node.js application.
+This project is a simple demonstration on how the package.json file works within a Node.js application. 
 
  ### How to Run
 
@@ -10,13 +10,10 @@ Open http://localhost:3000 in your browser.
 
 npm test
 
-### What This Project Demonstrates
+### What This Project Demonstrates:
 
 • Dependencies and devDependencies
 • Scripts (start, test)
 • Versioning and engines field
 • Use of Express and Jest
 • Purpose of package-lock.json
-Repository
-
-https://github.com/givecoffee/AD311 
