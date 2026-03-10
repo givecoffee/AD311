@@ -1,18 +1,17 @@
-// test.js - File with intentional ESLint errors
-
-const greeting = 'Hello World';    // double quotes, missing semicolon
-let unusedVariable = 42;          // unused variable
-var oldStyle = 'test';             // var instead of const/let, double quotes
-
+const greeting = 'Hello World';   
+const unusedVariable = 42;         
+const oldStyle = 'test';           
 function sayHello(name) {
-    console.log(greeting + ', ' + name);   // wrong indentation
+    console.log(unusedVariable);          
+    console.log(oldStyle);                
+    console.log(greeting + ', ' + name);
 }
 
-sayHello('User');    // double quotes, missing semicolon
+sayHello('User');
 
 const data = {
-    name: 'John',
-    age: 30
+    name: 'Robot',
+    age: 38
 };
 
 console.log(data);
