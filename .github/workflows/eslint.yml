@@ -32,4 +32,4 @@ jobs:
 
       - name: Run ESLint
         working-directory: node-server
-        run: npm run lint
+        run: node node_modules/eslint/bin/eslint.js --ext .js,.ts,.jsx,.tsx .
