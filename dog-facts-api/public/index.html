@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dog Facts</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #f9f6f1;
+      color: #2c2c2c;
+      padding: 40px 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+    }
+
+    p.subtitle {
+      color: #777;
+      font-size: 0.95rem;
+      margin-bottom: 30px;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+      align-items: center;
+    }
+
+    input {
+      width: 70px;
+      padding: 8px 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    button {
+      padding: 8px 18px;
+      font-size: 1rem;
+      background: #2c2c2c;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #444;
+    }
+
+    .error {
+      color: #c0392b;
+      font-size: 0.9rem;
+      margin-bottom: 16px;
+    }
+
+    .facts-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .facts-list li {
+      background: #fff;
+      border: 1px solid #e0dbd3;
+      border-radius: 6px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      line-height: 1.6;
+      font-size: 0.97rem;
+    }
+
+    .count {
+      font-size: 0.85rem;
+      color: #999;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🐶 Dog Facts</h1>
+  <p class="subtitle">Fetchin' dog facts</p>
+
+  <div class="controls">
+    <input
+      type="number"
+      id="numberInput"
+      placeholder="e.g. 5"
+      min="1"
+    />
+    <button onclick="getFacts()">Get Facts</button>
+    <button onclick="getAllFacts()">All Facts</button>
+  </div>
+
+  <p class="error" id="errorMsg"></p>
+  <p class="count" id="countMsg"></p>
+  <ul class="facts-list" id="factsList"></ul>
+
+  <script>
+    async function getFacts() {
+      const number = document.getElementById("numberInput").value;
+      const url = number ? `/facts?number=${number}` : "/facts";
+      await fetchAndDisplay(url);
+    }
+
+    async function getAllFacts() {
+      document.getElementById("numberInput").value = "";
+      await fetchAndDisplay("/facts");
+    }
+
+    async function fetchAndDisplay(url) {
+      const errorMsg  = document.getElementById("errorMsg");
+      const countMsg  = document.getElementById("countMsg");
+      const factsList = document.getElementById("factsList");
+
+      // Clear previous results
+      errorMsg.textContent  = "";
+      countMsg.textContent  = "";
+      factsList.innerHTML   = "";
+
+      try {
+        const res  = await fetch(url);
+        const data = await res.json();
+
+        if (!data.success) {
+          errorMsg.textContent = data.error;
+          return;
+        }
+
+        countMsg.textContent = `Showing ${data.facts.length} fact${data.facts.length === 1 ? "" : "s"}`;
+
+        data.facts.forEach(fact => {
+          const li = document.createElement("li");
+          li.textContent = fact;
+          factsList.appendChild(li);
+        });
+
+      } catch (err) {
+        errorMsg.textContent = "Something went wrong. Is the server running?";
+      }
+    }
+  </script>
+
+</body>
+</html>
