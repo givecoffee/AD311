@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dog API Explorer</title>
+
+  <!-- Modern font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-brand">
+      <span class="header-emoji">🐶</span>
+      <h1>Dog API Explorer</h1>
+    </div>
+    <nav>
+      <button class="nav-btn active" data-section="breeds">Breeds</button>
+      <button class="nav-btn"        data-section="facts">Facts</button>
+      <button class="nav-btn"        data-section="groups">Groups</button>
+      <button class="nav-btn"        data-section="tests">Tests</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── BREEDS ────────────────────────────────────────────── -->
+    <section id="breeds" class="section active">
+      <div class="section-header">
+        <h2>Dog Breeds</h2>
+        <p class="subtitle">Click any breed card to explore detailed information.</p>
+      </div>
+      <div id="breeds-error"   class="error-msg hidden"></div>
+      <div id="breeds-loading" class="loading">
+        <span class="spinner"></span> Loading breeds…
+      </div>
+      <ul id="breeds-list" class="breed-list"></ul>
+    </section>
+
+    <!-- ── FACTS ─────────────────────────────────────────────── -->
+    <section id="facts" class="section hidden">
+      <div class="section-header">
+        <h2>Random Dog Facts</h2>
+        <p class="subtitle">Discover interesting facts about our canine companions.</p>
+      </div>
+      <button id="fetch-facts-btn" class="action-btn">
+        <span>✨</span> Load Facts
+      </button>
+      <div id="facts-error"   class="error-msg hidden"></div>
+      <div id="facts-loading" class="loading hidden">
+        <span class="spinner"></span> Loading facts…
+      </div>
+      <div id="facts-container" class="facts-grid"></div>
+    </section>
+
+    <!-- ── GROUPS ────────────────────────────────────────────── -->
+    <section id="groups" class="section hidden">
+      <div class="section-header">
+        <h2>Dog Groups</h2>
+        <p class="subtitle">Browse breeds organized by their official group classification.</p>
+      </div>
+      <button id="fetch-groups-btn" class="action-btn">
+        <span>🏷️</span> Load Groups
+      </button>
+      <div id="groups-error"   class="error-msg hidden"></div>
+      <div id="groups-loading" class="loading hidden">
+        <span class="spinner"></span> Loading groups…
+      </div>
+      <ul id="groups-list" class="group-list"></ul>
+    </section>
+
+    <!-- ── TESTS ─────────────────────────────────────────────── -->
+    <section id="tests" class="section hidden">
+      <div class="section-header">
+        <h2>Test Suite</h2>
+        <p class="subtitle">Run all normal and edge case tests against the live API.</p>
+      </div>
+      <button id="run-tests-btn" class="action-btn">
+        <span>▶</span> Run All Tests
+      </button>
+      <div id="test-results" class="test-results"></div>
+    </section>
+
+  </main>
+
+  <!-- Overlay behind the detail panel -->
+  <div id="panel-overlay" class="panel-overlay hidden"></div>
+
+  <!-- ── DETAIL PANEL (moved outside <main> so it overlays cleanly) -->
+  <div id="breed-detail" class="detail-panel hidden">
+    <div class="detail-header">
+      <button id="close-detail" class="close-btn">✕ Close</button>
+    </div>
+    <div id="breed-detail-content"></div>
+  </div>
+
+  <script src="app.js"></script>
+  <script src="tests.js"></script>
+</body>
+</html>
