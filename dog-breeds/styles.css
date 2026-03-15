@@ -1,6 +1,3 @@
-/* ═══════════════════════════════════════════════════════════════
-   CSS Custom Properties
-   ═══════════════════════════════════════════════════════════════ */
 :root {
   /* Brand */
   --clr-primary-1:    #f97316;
@@ -570,8 +567,6 @@ main {
   /* Override any inherited ::before from .group-list li */
   width: 100%;
 }
-
-/* No ::before on .group-item — the icon lives inside .group-header */
 .group-item::before {
   content: none;
 }
@@ -640,7 +635,7 @@ main {
   color: var(--clr-primary-1);
 }
 
-/* ── Sub-list container ──────────────────────────────────────── */
+/* Sub-list container */
 .group-breeds {
   /* Contained inside the card */
   padding: 1rem 1.1rem 1.1rem;

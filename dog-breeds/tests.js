@@ -1,10 +1,4 @@
-/* ═══════════════════════════════════════════════════════════════
-   tests.js  —  In-browser test suite for Dog Breeds App
-   ═══════════════════════════════════════════════════════════════ */
-
 'use strict';
-
-// ── Test Runner Infrastructure ───────────────────────────────────
 
 /** Global store for all test results */
 const TEST_RESULTS = [];
