@@ -1,0 +1,15 @@
+{
+  "name": "content-optimizer-string-reversal",
+  "version": "1.0.0",
+  "description": "Recursive string reversal — TextWise Solutions interview submission",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "vitest": "^1.6.0"
+  }
+}
