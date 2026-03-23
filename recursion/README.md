@@ -11,7 +11,7 @@ text-manipulation pipeline (sentence-structure analysis, stylistic suggestions).
 
 Before coding, I would ask the interviewer:
 
-- Is there a maximum input length? | Stack-overflow risk for very deep recursion in JS (~10k+ frames) 
+- Is there a maximum input length? Stack-overflow risk for very deep recursion in JS 
 - Is an iterative fallback acceptable as an optimised alternative, or must the optimised version remain recursive? 
 - Should the function be pure (no mutation)? 
 
