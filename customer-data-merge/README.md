@@ -1,5 +1,8 @@
 # Customer Data Merge
 
+## Video Demo:
+https://youtu.be/HKJDrTwhmMI
+
 ## Problem
 Merge two sorted arrays into one sorted array in-place.
 
