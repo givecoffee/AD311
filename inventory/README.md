@@ -8,9 +8,9 @@ Duplicate every `0` in the inventory array in-place, shifting subsequent element
 
 ## Approach
 
-**Naive (`duplicate_zeros_naive`)** — build an expanded list, copy the first `n` values back. O(n) time, O(n) space. Easy to follow.
+**Naive (`duplicate_zeros_naive`)** - build an expanded list, copy the first `n` values back. O(n) time, O(n) space. Easy to follow.
 
-**Optimised (`duplicate_zeros`)** — two passes, no extra array. O(n) time, O(1) space.
+**Optimised (`duplicate_zeros`)** - two passes, no extra array. O(n) time, O(1) space.
 
 - Pass 1: walk left-to-right counting zeros until the "write cursor" would hit position `n`. This tells us exactly how many zeros fit and where the last real element lands. There's one edge case: if a zero lands exactly on the last writable slot, write a single zero there and shrink `n` by 1 before stopping.
 - Pass 2: walk right-to-left from that boundary, writing each element at `index + remaining_zeros`. Zeros get written twice; everything else shifts right by the zero count.
